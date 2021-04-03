@@ -33,7 +33,7 @@ Template.body.events({
     event.preventDefault();
 
     // Get value from form element
-    const target = event.target;
+    const { target } = event;
     const text = target.text.value;
     
     Meteor.call('tasks.insert', text);
