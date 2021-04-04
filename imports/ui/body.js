@@ -20,7 +20,7 @@ Template.body.helpers({
         // If hide completed is checked, filter tasks
         return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
       }
-    return Tasks.find({}, { sort: { createdAt: -1 } });
+    return Tasks.find({}, { sort: { checked: 1, createdAt: -1 } });
   },
   incompleteCount() {
     return Tasks.find({ checked: { $ne: true } }).count();
